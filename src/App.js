@@ -1,28 +1,24 @@
-import React from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Appointment from "./pages/Appointment";
 import EHR from "./pages/EHR";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
 import "./App.css";
 
 function App() {
   return (
     <Router>
       <Header />
-      <nav className="nav">
-        <Link to="/">Home</Link>
-        <Link to="/appointment">Book Appointment</Link>
-        <Link to="/ehr">EHR Records</Link>
-      </nav>
-      <div className="content">
+
+      <main className="container">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/appointment" element={<Appointment />} />
+          <Route path="/appointments" element={<Appointment />} />
           <Route path="/ehr" element={<EHR />} />
         </Routes>
-      </div>
+      </main>
+
       <Footer />
     </Router>
   );

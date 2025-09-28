@@ -1,12 +1,22 @@
 import React from "react";
 
-function PatientRecord({ record }) {
+function PatientRecord({ records }) {
   return (
-    <div className="record">
-      <h3>{record.name} ({record.age} yrs)</h3>
-      <p><b>Diagnosis:</b> {record.diagnosis}</p>
-      <p><b>Prescription:</b> {record.prescription}</p>
-      <p><b>Last Visit:</b> {record.date}</p>
+    <div className="record-container">
+      <h2>Patient Records</h2>
+      {records.length === 0 ? (
+        <p>No records found.</p>
+      ) : (
+        <ul>
+          {records.map((rec, i) => (
+            <li key={i} className="record-card">
+              <strong>Date:</strong> {rec.date} <br />
+              <strong>Diagnosis:</strong> {rec.diagnosis} <br />
+              <strong>Prescription:</strong> {rec.prescription}
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 }

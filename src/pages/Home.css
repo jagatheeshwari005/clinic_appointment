@@ -1,0 +1,69 @@
+.doctors-section {
+  background: #f8f9fa;
+  padding: 3rem 2rem;
+}
+
+.doctors-section h3 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* Doctors row - horizontal layout */
+.doctors-row {
+  display: flex;
+  flex-wrap: wrap;       /* wrap on smaller screens */
+  justify-content: center;
+  gap: 2rem;
+}
+
+.doctor-card {
+  display: flex;
+  flex-direction: row;   /* horizontal layout */
+  align-items: center;   /* image vertically centered */
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+  width: 350px;
+  max-width: 100%;
+}
+
+.doctor-card img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px 0 0 10px; /* rounded on left only */
+}
+
+.doctor-info {
+  padding: 1rem;
+  flex: 1;
+}
+
+.doctor-info h4 {
+  margin: 0.5rem 0;
+}
+
+.doctor-info p {
+  margin: 0.3rem 0;
+}
+
+.doctor-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Responsive: stack vertically on small screens */
+@media (max-width: 768px) {
+  .doctor-card {
+    flex-direction: column; /* image on top */
+    align-items: center;
+    text-align: center;
+  }
+
+  .doctor-card img {
+    width: 100%;
+    height: 200px;
+    border-radius: 10px 10px 0 0;
+  }
+}
